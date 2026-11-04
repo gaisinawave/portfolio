@@ -1,0 +1,18 @@
+@font-face{font-family:Nimbus Narrow;src:url('assets/NimbusSansNarrow-Regular.otf') format('opentype');font-display:swap}
+:root{--bg:#e5e9ea;--narrow:'Arial Narrow','Liberation Sans Narrow','Nimbus Narrow',Arial,sans-serif;--ink:#000}
+*{box-sizing:border-box}html{overflow-anchor:none;scrollbar-width:none}html::-webkit-scrollbar{display:none}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--narrow);overflow-x:clip}p,h1{margin:0;font-weight:400}img{display:block}a{color:inherit;text-decoration:none}a:hover{opacity:.55}a:focus-visible{outline:2px solid #000;outline-offset:5px}header,footer{display:flex;align-items:center;gap:40px;padding:10px 20px;font-size:16px;line-height:1.12;letter-spacing:-.16px;text-transform:uppercase}header>a:last-child{margin-left:auto}.hero{position:relative;padding:80px 100px;text-align:center}.hero h1{font-size:90px;line-height:1.05;letter-spacing:-6.3px}.doodles{position:absolute;width:1440px;left:50%;top:-38px;transform:translateX(-50%) scale(var(--hero-scale,1));transform-origin:top center;pointer-events:none}.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0 20px}.column{display:flex;flex-direction:column;gap:10px;min-width:0}.card{width:100%;overflow:hidden}.card-art{zoom:var(--card-scale,1)}.contacts{padding-top:80px;text-align:center;display:flex;flex-direction:column;gap:60px}.contacts p{font-size:16px;line-height:1.12;letter-spacing:-.16px;text-transform:uppercase;margin-bottom:4px}.contacts a{font-size:64px;line-height:1.05;letter-spacing:-4.48px}footer{margin-top:80px;justify-content:space-between}footer>div{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:29px}.fixed-menu{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;display:flex;align-items:center;gap:40px;padding:10px;border-radius:4px;background:white;box-shadow:inset 0 0 4px #0004;font-size:16px;line-height:1.12;letter-spacing:-.16px;text-transform:uppercase;white-space:nowrap}.cycle{padding-bottom:0}.cycle[aria-hidden=true]{pointer-events:none}
+@media(min-width:1441px){.hero h1{font-size:6.25vw}.hero{padding-block:5.5556vw}.hero h1{letter-spacing:-.4375vw}}
+@media(max-width:1100px){.hero h1{font-size:7vw;letter-spacing:-.49vw}.hero{padding:60px 60px}.doodles{top:-28px}.contacts a{font-size:56px}}
+@media(max-width:600px){header{gap:20px;padding:12px;font-size:14px}.hero{padding:60px 12px}.hero h1{font-size:9.3vw;letter-spacing:-.65vw}.doodles{display:none}.works{grid-template-columns:1fr;padding-inline:12px}.fixed-menu{gap:22px;font-size:14px;max-width:calc(100vw - 24px);padding:12px}.contacts{padding-top:60px;gap:40px}.contacts a{font-size:42px;letter-spacing:-2.9px}footer{margin-top:60px;padding:12px;font-size:13px}footer>div{gap:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* Two faces keep link labels legible throughout the flip. */
+.flip-link{position:relative;display:inline-block;perspective:300px}
+.flip-link:hover{opacity:1}
+.flip-front,.flip-back{display:block;backface-visibility:hidden;transition:transform .45s cubic-bezier(.22,.61,.36,1);transform-origin:50% 50%}
+.flip-front{transform:rotateX(0deg)}
+.flip-back{position:absolute;inset:0;transform:rotateX(-180deg);pointer-events:none}
+@media(hover:hover){.flip-link:hover .flip-front{transform:rotateX(180deg)}.flip-link:hover .flip-back{transform:rotateX(0deg)}}
+.flip-link:focus-visible .flip-front{transform:rotateX(180deg)}
+.flip-link:focus-visible .flip-back{transform:rotateX(0deg)}
+@media(prefers-reduced-motion:reduce){.flip-front,.flip-back{transition:none}}
